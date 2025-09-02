@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: spoof-detector
+    env: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      # - key: MODEL_URL
+      #   value: https://.../model.h5
+    healthCheckPath: /
